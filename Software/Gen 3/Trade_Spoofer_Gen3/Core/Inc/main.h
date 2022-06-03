@@ -65,6 +65,9 @@ void Error_Handler(void);
 #define SD_In_GPIO_Port GPIOB
 #define SO_Pin GPIO_PIN_7
 #define SO_GPIO_Port GPIOB
+extern TIM_HandleTypeDef htim1;
+
+extern UART_HandleTypeDef huart1;
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

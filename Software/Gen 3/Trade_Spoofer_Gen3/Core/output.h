@@ -4,9 +4,9 @@
  *  Created on: 21.05.2022
  *      Author: Anercomp
  */
-
-#ifndef OUTPUT_H_
 #define OUTPUT_H_
+#ifndef OUTPUT_H_
+
 
 #define PLAYER_LENGTH 418
 

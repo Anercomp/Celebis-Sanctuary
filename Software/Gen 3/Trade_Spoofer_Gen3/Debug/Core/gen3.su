@@ -1,0 +1,14 @@
+../Core/gen3.c:14:6:send16Bit	0	static
+../Core/gen3.c:38:10:receive16Bit	4	static
+../Core/gen3.c:61:6:initLink	8	static
+../Core/gen3.c:97:6:sendBlock	16	static
+../Core/gen3.c:116:6:sendZeroBlock	8	static
+../Core/gen3.c:129:6:sendZero	8	static
+../Core/gen3.c:138:6:sendContBlock	16	static
+../Core/gen3.c:151:6:copyBlock	8	static
+../Core/gen3.c:74:6:waitForUnionRoom	8	static
+../Core/gen3.c:106:6:waitForTeamData	8	static
+../Core/gen3.c:169:6:sendMoveBlock	16	static
+../Core/gen3.c:161:6:handleUnionRoomMovement	8	static
+../Core/gen3.c:224:6:loopOfDespair	8	static
+../Core/gen3.c:284:6:sendUnionRoomData	256	static

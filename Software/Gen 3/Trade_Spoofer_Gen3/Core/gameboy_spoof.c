@@ -1,4 +1,5 @@
-//#include <EEPROM.h>
+/*
+#include <EEPROM.h>
 #include "pokemon.h"
 #include "output.h"
 
@@ -216,3 +217,4 @@ byte handleIncomingByte(byte in) {
 
   return send;
 }
+*/

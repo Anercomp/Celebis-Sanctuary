@@ -5,8 +5,9 @@
  *      Author: Anercomp
  */
 
-#ifndef POKEMON_H_
 #define POKEMON_H_
+#ifndef POKEMON_H_
+
 
 typedef enum {
 	NOT_CONNECTED,
