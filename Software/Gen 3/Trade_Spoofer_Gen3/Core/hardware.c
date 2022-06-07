@@ -6,22 +6,15 @@
  */
 
 #include "hardware.h"
+#include "stm32f1xx.h"
+//#include "RccConfig.h"
 
 void setPB5Input()
 {
-	GPIO_InitTypeDef GPIO_InitStruct = {0};
-	  GPIO_InitStruct.Pin = GPIO_PIN_5;
-	  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-	  GPIO_InitStruct.Pull = GPIO_NOPULL;
-	  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+	//GPIOB->MODER &= ~(GPIO_MODER_MODER5);
 }
 
 void setPB5Output()
 {
-	GPIO_InitTypeDef GPIO_InitStruct = {0};
-	  GPIO_InitStruct.Pin = GPIO_PIN_5;
-	  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_OD;
-	  GPIO_InitStruct.Pull = GPIO_NOPULL;
-	  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-	  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+	//GPIOB->MODER |= GPIO_MODER_MODER5_0;
 }

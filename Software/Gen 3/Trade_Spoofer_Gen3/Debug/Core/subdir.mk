@@ -5,20 +5,14 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../Core/gameboy_spoof.c \
-../Core/gen2.c \
 ../Core/gen3.c \
 ../Core/hardware.c 
 
 OBJS += \
-./Core/gameboy_spoof.o \
-./Core/gen2.o \
 ./Core/gen3.o \
 ./Core/hardware.o 
 
 C_DEPS += \
-./Core/gameboy_spoof.d \
-./Core/gen2.d \
 ./Core/gen3.d \
 ./Core/hardware.d 
 
@@ -30,7 +24,7 @@ Core/%.o Core/%.su: ../Core/%.c Core/subdir.mk
 clean: clean-Core
 
 clean-Core:
-	-$(RM) ./Core/gameboy_spoof.d ./Core/gameboy_spoof.o ./Core/gameboy_spoof.su ./Core/gen2.d ./Core/gen2.o ./Core/gen2.su ./Core/gen3.d ./Core/gen3.o ./Core/gen3.su ./Core/hardware.d ./Core/hardware.o ./Core/hardware.su
+	-$(RM) ./Core/gen3.d ./Core/gen3.o ./Core/gen3.su ./Core/hardware.d ./Core/hardware.o ./Core/hardware.su
 
 .PHONY: clean-Core
 

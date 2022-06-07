@@ -4,10 +4,11 @@
  *  Created on: 03.06.2022
  *      Author: Anercomp
  */
-#include "stm32f1xx.h"
-
 #ifndef GEN3_H_
 #define GEN3_H_
+
+#include "stm32f1xx.h"
+#include "gen3.h"
 
 #define MASTER_HANDSHAKE 0x8FFF
 #define SLAVE_HANDSHAKE  0xB9A0
@@ -22,10 +23,10 @@
 #define u16 uint16_t
 #define u32 uint32_t
 
-const uint16_t ticksPerBit = 625;
-uint16_t zeroPackets = 0;
-uint8_t timerPacketFlag = 0;
-uint8_t flags = 0;
+extern const uint16_t ticksPerBit;
+extern uint16_t zeroPackets;
+extern uint8_t timerPacketFlag;
+extern uint8_t flags;
 
 struct PokemonSubstruct0;
 struct PokemonSubstruct1;

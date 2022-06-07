@@ -5,8 +5,6 @@
 "./Core/Src/sysmem.o"
 "./Core/Src/system_stm32f1xx.o"
 "./Core/Startup/startup_stm32f103c8tx.o"
-"./Core/gameboy_spoof.o"
-"./Core/gen2.o"
 "./Core/gen3.o"
 "./Core/hardware.o"
 "./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o"

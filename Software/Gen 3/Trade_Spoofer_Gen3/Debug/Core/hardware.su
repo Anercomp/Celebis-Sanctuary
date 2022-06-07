@@ -1,2 +1,2 @@
-../Core/hardware.c:10:6:setPB5Input	24	static
-../Core/hardware.c:19:6:setPB5Output	24	static
+../Core/hardware.c:12:6:setPB5Input	0	static
+../Core/hardware.c:17:6:setPB5Output	0	static

@@ -18,12 +18,11 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "gen2.h"
-#include "gen3.h"
-#include "hardware.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+//#include "gen2.h"
+#include "gen3.h"
+#include "hardware.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -102,18 +101,22 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  /*
-	  //--------------------------------DON'T TOUCH! WORKS!------------------------
-	  GPIOA->BSRR = DataOutPin;
-	  while(receive16Bit() != 0xB9A0 || 0x8FFF);
-	  GPIOB->BSRR = SC_Pin;
-	  send16Bit(0xB9A0);
-	  GPIOB->BRR = SC_Pin;
-	  //--------------------------------DON'T TOUCH! WORKS!------------------------
-	   */
 	  GPIOC->BSRR = GPIO_PIN_13;
 	  GPIOB->BRR = GPIO_PIN_6;
 	  HAL_Delay(1000);
+
+	  while(1)
+	  {
+		  setPB5Output();
+		  GPIOB->BRR = GPIO_PIN_5;
+		  LED_ON
+		  HAL_Delay(1000);
+		  LED_OFF;
+		  GPIOB->BSRR = GPIO_PIN_5;
+		  setPB5Input();
+		  while(!(GPIOB->IDR & DataInPin));
+		  HAL_Delay(1000);
+	  }
 
 	  //--------------------------------------------------------------------------------------------------------------------------
 	  //-----------------------------------------------In front of counter--------------------------------------------------------

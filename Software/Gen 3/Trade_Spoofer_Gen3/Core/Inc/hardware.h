@@ -4,11 +4,11 @@
  *  Created on: 03.06.2022
  *      Author: Anercomp
  */
-#include "stm32f1xx.h"
-#include "stm32f1xx_hal.h"
-
 #ifndef HARDWARE_H_
 #define HARDWARE_H_
+
+#include "stm32f1xx.h"
+#include "stm32f1xx_hal.h"
 
 #define DataOutPin GPIO_PIN_7 	//PA7
 #define DataInPin GPIO_PIN_5	//PB5

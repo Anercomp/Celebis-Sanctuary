@@ -11,6 +11,11 @@
 #include "stm32f1xx_hal.h"
 #include "main.h"
 
+const uint16_t ticksPerBit = 625;
+uint16_t zeroPackets = 0;
+uint8_t timerPacketFlag = 0;
+uint8_t flags = 0;
+
 void send16Bit(uint16_t v)
 {
 	__HAL_TIM_SET_COUNTER(&htim1, 0);
