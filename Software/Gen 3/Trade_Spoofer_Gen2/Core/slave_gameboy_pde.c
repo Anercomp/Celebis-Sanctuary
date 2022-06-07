@@ -13,6 +13,8 @@
 #include "pokemonspoof.h"
 
 
+#define HIGH 1
+#define LOW 0
 
 int volatile CLOCK_PIN = 2;
 int volatile SO_PIN = 4;
@@ -46,22 +48,19 @@ volatile trade_centre_state_t trade_centre_state = INIT;
 
 
 void clockInterrupt(void) {
-
-
-
-	while(__HAL_TIM_GET_COUNTER(&htim1) < 939);
-			__HAL_TIM_SET_COUNTER(&htim1, 0);
+//__HAL_TIM_SET_COUNTER(&htim1, 0);
 
 	byte in;
 	unsigned long t = 0;
 	if(lastReceive > 0) {
-		if( micros() - lastReceive > 120 ) {
+		if(__HAL_TIM_GET_COUNTER(&htim1) - lastReceive > 8880 ) {
 			counterRead = 0;
 			val = 0;
 			in = 0x00;
 		}
 	}
-	data = digitalRead(SI_PIN);
+	data = GPIOB->IDR & SI_PIN;												//data = digitalRead(SI_PIN);
+
 	if(data == HIGH){
 		val |= ( 1 << (7-counterRead) );
 		in |= ( 1 << (7-counterRead) );
@@ -74,8 +73,9 @@ void clockInterrupt(void) {
 	}
   
 	counterRead++;
-	lastReceive = micros();
-	while( ((digitalRead(CLOCK_PIN) | CLOCK_PIN) & CLOCK_PIN)  == 0);
+	lastReceive = __HAL_TIM_GET_COUNTER(&htim1);
+	//while( ((digitalRead(CLOCK_PIN) | CLOCK_PIN) & CLOCK_PIN)  == 0); 		//wtf?
+
 	digitalWrite(SO_PIN, outputBuffer & 0x80 ? SO_PIN : 0);
 	outputBuffer = outputBuffer << 1;
 }
