@@ -1,0 +1,3 @@
+../Core/slave_gameboy_pde.c:51:6:handleIncomingByte	24	static
+../Core/slave_gameboy_pde.c:128:6:clockInterrupt	16	static
+../Core/slave_gameboy_pde.c:170:6:loop	4	static
